@@ -22,7 +22,7 @@ export const HourlyWeatherCard: React.FC<HourlyWeatherPropsInterface> = (
       </span>
       <span className={styles.time}>{`${date.getHours()}:00`}</span>
       <div className={styles.weather_icon}>
-        <img src={`/src/assets/weatherIcons/${weatherIcon}.svg`} />
+        <img src={`/assets/weatherIcons/${weatherIcon}.svg`} />
       </div>
       <span className={styles.temp}>{degreeConverter(tempUnits, temp)}</span>
     </div>

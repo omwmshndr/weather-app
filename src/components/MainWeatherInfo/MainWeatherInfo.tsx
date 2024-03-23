@@ -31,7 +31,7 @@ export const MainWeatherInfo: React.FC = () => {
       </div>
       <div className={styles.weather_img}>
         <img
-          src={`/src/assets/weatherIcons/${currentWeather?.weather[0].icon}.svg`}
+          src={`/assets/weatherIcons/${currentWeather?.weather[0].icon}.svg`}
         />
       </div>
     </div>
