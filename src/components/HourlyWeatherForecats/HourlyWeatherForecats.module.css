@@ -1,0 +1,25 @@
+.hourly {
+  max-width: 100%;
+  background-color: #e8e9f4;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.hourly > h2 {
+  text-transform: uppercase;
+  color: #757575;
+  margin-bottom: 12px;
+}
+
+.hourly_wrapper {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.hourly_sroll {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  padding-bottom: 16px;
+}

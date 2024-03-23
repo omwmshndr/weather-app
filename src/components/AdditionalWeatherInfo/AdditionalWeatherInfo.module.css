@@ -1,0 +1,9 @@
+.weather_info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 100%;
+  background-color: #e8e9f4;
+  padding: 12px;
+  border-radius: 12px;
+}

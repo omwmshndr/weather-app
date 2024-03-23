@@ -1,0 +1,27 @@
+.hourly_card {
+  color: #757575;
+	height: 200px;
+  background-color: #eff0f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.weather_icon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.weather_icon > img {
+  object-fit: contain;
+}
+.temp {
+  color: #313131;
+  font-weight: 700;
+}
