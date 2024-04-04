@@ -1,7 +1,7 @@
-import { useAppSelector } from '../../hooks/hooks'
-import { degreeConverter } from '../../scripts/degreeConverter'
-import { daysTranslations } from '../../scripts/translations'
+import { useAppSelector } from '../../store/hooks/hooks'
 import { HourlyWeatherPropsInterface } from '../../types/types'
+import { degreeConverter } from '../../utils/degreeConverter'
+import { daysTranslations } from '../../utils/translations'
 import styles from './HourlyWeatherCard.module.css'
 
 export const HourlyWeatherCard: React.FC<HourlyWeatherPropsInterface> = (
@@ -22,7 +22,9 @@ export const HourlyWeatherCard: React.FC<HourlyWeatherPropsInterface> = (
       </span>
       <span className={styles.time}>{`${date.getHours()}:00`}</span>
       <div className={styles.weather_icon}>
-        <img src={`https://raw.githubusercontent.com/omwmshndr/weather_app/01335434acd6cce0e1096dd2b732ef81797f2178/src/assets/weatherIcons/${weatherIcon}.svg`} />
+        <img
+          src={`https://raw.githubusercontent.com/omwmshndr/weather_app/01335434acd6cce0e1096dd2b732ef81797f2178/src/assets/weatherIcons/${weatherIcon}.svg`}
+        />
       </div>
       <span className={styles.temp}>{degreeConverter(tempUnits, temp)}</span>
     </div>

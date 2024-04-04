@@ -1,13 +1,19 @@
+import { LoadingOutlined } from '@ant-design/icons'
+import { Spin } from 'antd'
+import { SetStateAction } from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.min.css'
-import styles from './CitiesList.module.css'
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
-import { Spin } from 'antd'
-import { LoadingOutlined } from '@ant-design/icons'
-import { getCurrentWeather, getHourlyWeather } from '../../actions/getWeather'
+import {
+  getCurrentWeather,
+  getHourlyWeather,
+} from '../../store/actions/getWeather'
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
+import {
+  setFilteredCitiesListToDefault,
+  setSourceCitiesListToDefault,
+} from '../../store/reducers/citiesSlice'
 import { setCurrentCity } from '../../store/reducers/configSlice'
-import { SetStateAction } from 'react'
-import { setFilteredCitiesListToDefault, setSourceCitiesListToDefault } from '../../store/reducers/citiesSlice'
+import styles from './CitiesList.module.css'
 
 interface CitiesListPropsInterface {
   inputValue: string
@@ -15,7 +21,7 @@ interface CitiesListPropsInterface {
 }
 
 export const CitiesList: React.FC<CitiesListPropsInterface> = (props) => {
-  const {setInputValue} = {...props}
+  const { setInputValue } = { ...props }
   const { citiesError, citiesLoadind, filteredCitiesList } = useAppSelector(
     (state) => state.cities,
   )

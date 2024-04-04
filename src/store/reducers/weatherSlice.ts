@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {
-  getCurrentWeather,
-  autoGetCurrentWeather,
-  getHourlyWeather,
-  autoGetHourlyWeather,
-} from '../../actions/getWeather'
 import { WeatherStateInterface } from '../../types/types'
+import {
+  autoGetCurrentWeather,
+  autoGetHourlyWeather,
+  getCurrentWeather,
+  getHourlyWeather,
+} from '../actions/getWeather'
 
 const initialState: WeatherStateInterface = {
   weatherLoading: false,

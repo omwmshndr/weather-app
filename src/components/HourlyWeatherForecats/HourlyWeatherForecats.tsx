@@ -1,8 +1,8 @@
-import { HourlyWeatherCard } from '../HourlyWeatherCard/HourlyWeatherCard'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.min.css'
+import { useAppSelector } from '../../store/hooks/hooks'
+import { HourlyWeatherCard } from '../HourlyWeatherCard/HourlyWeatherCard'
 import styles from './HourlyWeatherForecats.module.css'
-import { useAppSelector } from '../../hooks/hooks'
 
 export const HourlyWeatherForecats = () => {
   const { hourlyWeather } = useAppSelector((state) => state.weather.weatherData)

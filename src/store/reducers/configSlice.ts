@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { ConfigStateInterface } from '../../types/types'
-import { autoGetCurrentWeather } from '../../actions/getWeather'
+import { autoGetCurrentWeather } from '../actions/getWeather'
 
 const initialState: ConfigStateInterface = {
   currentCity: null,
@@ -22,15 +22,15 @@ const configSlice = createSlice({
     setCurrentCity: (state, action: PayloadAction<string>) => {
       state.currentCity = action.payload
     },
-    setTranslatedCurrentCity: (state, action: PayloadAction<string|null>) => {
+    setTranslatedCurrentCity: (state, action: PayloadAction<string | null>) => {
       state.translatedCurrentCity = action.payload
     },
   },
-  extraReducers: builder=>{
+  extraReducers: (builder) => {
     builder.addCase(autoGetCurrentWeather.fulfilled, (state, action) => {
       state.currentCity = action.payload.name
     })
-  }
+  },
 })
 
 export const {

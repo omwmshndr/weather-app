@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getCitySuggestions } from '../../actions/getCitiesSuggestions'
 import { CitiesStateInterface } from '../../types/types'
+import { getCitySuggestions } from '../actions/getCitiesSuggestions'
 
 const initialState: CitiesStateInterface = {
   citiesLoadind: false,

@@ -1,6 +1,6 @@
-import { useAppSelector } from '../../hooks/hooks'
-import { degreeConverter } from '../../scripts/degreeConverter'
-import { unixDateToTime } from '../../scripts/unixDateToTime'
+import { useAppSelector } from '../../store/hooks/hooks'
+import { degreeConverter } from '../../utils/degreeConverter'
+import { unixDateToTime } from '../../utils/unixDateToTime'
 import { WeatherInfoCard } from '../WeatherInfoCard/WeatherInfoCard'
 import styles from './AdditionalWeatherInfo.module.css'
 

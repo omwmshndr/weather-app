@@ -1,7 +1,7 @@
-import { HeaderSearchInput } from './HeaderSerachInput/HeaderSerachInput'
-import { HeaderLangSwitch } from './HeaderSwitchers/HeaderLangSwitch'
+import { HeaderSearchInput } from '../HeaderSerachInput/HeaderSerachInput'
+import { HeaderLangSwitch } from '../HeaderSwitchers/HeaderLangSwitch'
+import { HeaderTempUnitsSwitch } from '../HeaderSwitchers/HeaderTempUnitsSwitch'
 import styles from './Header.module.css'
-import { HeaderTempUnitsSwitch } from './HeaderSwitchers/HeaderTempUnitsSwitch'
 
 export const Header: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
-import { useAppSelector } from '../../hooks/hooks'
-import { degreeConverter } from '../../scripts/degreeConverter'
-import { weatherDescriptionTranslates } from '../../scripts/translations'
+import { useAppSelector } from '../../store/hooks/hooks'
+import { degreeConverter } from '../../utils/degreeConverter'
+import { weatherDescriptionTranslates } from '../../utils/translations'
 import styles from './MainWeatherInfo.module.css'
 
 export const MainWeatherInfo: React.FC = () => {
