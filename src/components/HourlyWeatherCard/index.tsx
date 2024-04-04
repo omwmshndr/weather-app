@@ -2,7 +2,7 @@ import { useAppSelector } from '../../store/hooks/hooks'
 import { HourlyWeatherPropsInterface } from '../../types/types'
 import { degreeConverter } from '../../utils/degreeConverter'
 import { daysTranslations } from '../../utils/translations'
-import styles from './HourlyWeatherCard.module.css'
+import styles from './index.module.scss'
 
 export const HourlyWeatherCard: React.FC<HourlyWeatherPropsInterface> = (
   props,

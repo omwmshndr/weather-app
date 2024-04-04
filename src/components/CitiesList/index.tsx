@@ -13,7 +13,7 @@ import {
   setSourceCitiesListToDefault,
 } from '../../store/reducers/citiesSlice'
 import { setCurrentCity } from '../../store/reducers/configSlice'
-import styles from './CitiesList.module.css'
+import styles from './index.module.scss'
 
 interface CitiesListPropsInterface {
   inputValue: string

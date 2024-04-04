@@ -1,0 +1,65 @@
+.main_weather_info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #313131;
+  display: flex;
+  width: 100%;
+  margin-bottom: 24px;
+
+  .info_wrapper {
+    display: flex;
+    gap: 24px;
+
+    .city_temp {
+      .city {
+        font-weight: 500;
+        font-size: 48px;
+        text-transform: capitalize;
+      }
+
+      .temp_now {
+        font-weight: 600;
+        font-size: 72px;
+      }
+    }
+
+    .weather_img {
+      width: 100%;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .description {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .main_weather_info {
+    .info_wrapper {
+      .city_temp {
+        .city {
+          font-size: 24px; 
+        }
+
+        .temp_now {
+          font-size: 36px; 
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .main_weather_info {
+.description{
+  font-size: 24px;
+}
+  }
+}

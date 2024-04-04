@@ -1,0 +1,38 @@
+.app {
+  height: 100%;
+  max-width: 100vw;
+  padding: 0 96px;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.menu {
+  width: fit-content;
+}
+@media only screen and (max-width: 850px) and (min-width: 768px) {
+  .app {
+    padding: 0px 72px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 680px) {
+  .app {
+    padding: 0 48px;
+  }
+}
+
+@media only screen and (max-width: 680px) and (min-width:450px) {
+  .app {
+    padding: 0 24px;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  .app {
+    padding: 0 12px;
+  }
+}

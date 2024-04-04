@@ -1,10 +1,10 @@
 import { ArrowUpOutlined, LoadingOutlined } from '@ant-design/icons'
 import { Alert, Spin } from 'antd'
 import { useAppSelector } from '../../store/hooks/hooks'
-import { AdditionalWeatherInfo } from '../AdditionalWeatherInfo/AdditionalWeatherInfo'
-import { HourlyWeatherForecats } from '../HourlyWeatherForecats/HourlyWeatherForecats'
-import { MainWeatherInfo } from '../MainWeatherInfo/MainWeatherInfo'
-import styles from './TodayForecast.module.css'
+import { AdditionalWeatherInfo } from '../AdditionalWeatherInfo'
+import { HourlyWeatherForecats } from '../HourlyWeatherForecats'
+import { MainWeatherInfo } from '../MainWeatherInfo'
+import styles from './index.module.scss'
 
 export const TodayForecast: React.FC = () => {
   const { weatherLoading, weatherData, weatherError } = useAppSelector(

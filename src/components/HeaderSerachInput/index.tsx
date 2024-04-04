@@ -13,8 +13,8 @@ import {
 } from '../../store/reducers/citiesSlice'
 import { setCurrentCity } from '../../store/reducers/configSlice'
 import { detectLocation } from '../../utils/detectLocation'
-import { CitiesList } from '../CitiesList/CitiesList'
-import styles from './HeaderSerachInput.module.css'
+import { CitiesList } from '../CitiesList'
+import styles from './index.module.scss'
 
 export const HeaderSearchInput = () => {
   const [inputValue, setInputValue] = useState<string>('')

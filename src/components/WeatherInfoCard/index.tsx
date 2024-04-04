@@ -1,4 +1,4 @@
-import styles from './WeatherInfoCard.module.css'
+import styles from './index.module.scss'
 
 type WeatherInfoCardPropsType = {
   title: string

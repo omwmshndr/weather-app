@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { setTempUnits } from '../../store/reducers/configSlice'
-import styles from './HeaderSwitchers.module.css'
+import styles from './index.module.scss'
 
 export const HeaderTempUnitsSwitch = () => {
   const dispatch = useAppDispatch()

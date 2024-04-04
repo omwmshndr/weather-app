@@ -1,8 +1,8 @@
 import { useAppSelector } from '../../store/hooks/hooks'
 import { degreeConverter } from '../../utils/degreeConverter'
 import { unixDateToTime } from '../../utils/unixDateToTime'
-import { WeatherInfoCard } from '../WeatherInfoCard/WeatherInfoCard'
-import styles from './AdditionalWeatherInfo.module.css'
+import { WeatherInfoCard } from '../WeatherInfoCard'
+import styles from './index.module.scss'
 
 export const AdditionalWeatherInfo = () => {
   const { currentWeather } = useAppSelector(
