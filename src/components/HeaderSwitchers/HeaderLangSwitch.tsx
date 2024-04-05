@@ -6,9 +6,11 @@ import {
   setTranslatedCurrentCity,
 } from '../../store/reducers/configSlice'
 import styles from './index.module.scss'
+import { useTranslation } from 'react-i18next'
 
 export const HeaderLangSwitch = () => {
   const dispatch = useAppDispatch()
+  const { i18n } = useTranslation()
 
   const { currentCity, lang } = useAppSelector((state) => {
     return {
@@ -33,6 +35,7 @@ export const HeaderLangSwitch = () => {
   const changeLangHandler = async (e: React.MouseEvent) => {
     const target = e.currentTarget as HTMLButtonElement
     dispatch(setLang(target.value as 'en' | 'ua'))
+    i18n.changeLanguage(target.value)
     dispatch(
       setTranslatedCurrentCity(await translateText(currentCity as string)),
     )
@@ -60,7 +63,7 @@ export const HeaderLangSwitch = () => {
             ? `${styles.groupButton} ${styles.activeButton}`
             : styles.groupButton
         }
-        onClick={(e) => dispatch(setLang(e.currentTarget.value as 'en' | 'ua'))}
+        onClick={(e) => changeLangHandler(e)}
       >
         UA
       </button>

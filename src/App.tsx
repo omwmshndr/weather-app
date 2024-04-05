@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from './App.module.scss'
 import { Header } from './components/Header'
 import { TodayForecast } from './components/TodayForecast'
+import './i18n'
+import styles from './App.module.scss'
 
 const App: React.FC = () => {
   return (

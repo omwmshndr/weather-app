@@ -1,9 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../store/hooks/hooks'
 import { degreeConverter } from '../../utils/degreeConverter'
-import { weatherDescriptionTranslates } from '../../utils/translations'
 import styles from './index.module.scss'
 
 export const MainWeatherInfo: React.FC = () => {
+  const { t } = useTranslation()
   const { currentCity, translatedCurrentCity } = useAppSelector(
     (state) => state.config,
   )
@@ -30,11 +31,7 @@ export const MainWeatherInfo: React.FC = () => {
         </div>
       </div>
       <h3 className={styles.description}>
-        {lang === 'en'
-          ? currentWeather?.weather[0].description
-          : weatherDescriptionTranslates[
-              currentWeather?.weather[0].description as string
-            ]}
+        {t(`weatherDescriptions.${currentWeather?.weather[0].description}`)}
       </h3>
     </div>
   )
