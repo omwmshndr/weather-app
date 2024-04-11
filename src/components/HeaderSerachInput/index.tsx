@@ -22,6 +22,8 @@ export const HeaderSearchInput = () => {
 
   const dispatch = useAppDispatch()
 
+  const [citiesHidden, setCitiesHidden] = useState<boolean>(true)
+
   const inputHandler = async (value: string) => {
     setInputValue(value)
     const correctValue = value.toLowerCase().trim()
@@ -67,8 +69,14 @@ export const HeaderSearchInput = () => {
           value={inputValue}
           onChange={(e) => inputHandler(e.target.value)}
           onKeyUp={(e) => onEnterHandler(e)}
+          onClick={() => setCitiesHidden(false)}
         />
-        <CitiesList inputValue={inputValue} setInputValue={setInputValue} />
+        <CitiesList
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          citiesHidden={citiesHidden}
+          setCitiesHidden={setCitiesHidden}
+        />
       </div>
       <button
         className={styles.circleButton}

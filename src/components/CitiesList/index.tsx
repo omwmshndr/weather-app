@@ -14,14 +14,18 @@ import {
 } from '../../store/reducers/citiesSlice'
 import { setCurrentCity } from '../../store/reducers/configSlice'
 import styles from './index.module.scss'
+import { useOutsideClick } from '../../utils/useOutsideClick'
+import classNames from 'classnames/bind'
 
 interface CitiesListPropsInterface {
   inputValue: string
   setInputValue: React.Dispatch<SetStateAction<string>>
+  citiesHidden: boolean
+  setCitiesHidden: React.Dispatch<SetStateAction<boolean>>
 }
 
 export const CitiesList: React.FC<CitiesListPropsInterface> = (props) => {
-  const { setInputValue } = { ...props }
+  const { setInputValue, citiesHidden, setCitiesHidden } = { ...props }
   const { citiesError, citiesLoadind, filteredCitiesList } = useAppSelector(
     (state) => state.cities,
   )
@@ -36,14 +40,23 @@ export const CitiesList: React.FC<CitiesListPropsInterface> = (props) => {
     setInputValue('')
   }
 
+  const ref = useOutsideClick(() => {
+    setCitiesHidden(true)
+  })
+  const cx = classNames.bind(styles)
+
+  const citiesListClassName = cx({
+    citiesListHidden:
+      !(citiesError === null && (filteredCitiesList?.length as number) > 0) ||
+      citiesHidden,
+    citiesList:
+      citiesError === null &&
+      (filteredCitiesList?.length as number) > 0 &&
+      !citiesHidden,
+  })
+
   return (
-    <div
-      className={
-        citiesError === null && (filteredCitiesList?.length as number) > 0
-          ? styles.citiesList
-          : styles.citiesListHidden
-      }
-    >
+    <div ref={ref} className={citiesListClassName}>
       {citiesLoadind ? (
         <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
       ) : (
