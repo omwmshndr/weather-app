@@ -14,6 +14,7 @@ import {
 import { setCurrentCity } from '../../store/reducers/configSlice'
 import { detectLocation } from '../../utils/detectLocation'
 import { CitiesList } from '../CitiesList'
+import Joi from 'joi'
 import styles from './index.module.scss'
 
 export const HeaderSearchInput = () => {
@@ -46,12 +47,31 @@ export const HeaderSearchInput = () => {
       dispatch(setSourceCitiesListToDefault())
     }
   }
+
+  const searchShema = Joi.string()
+    .min(1)
+    .max(100)
+    .required()
+    .pattern(/^[a-zA-Z\s-]+$/)
+    .messages({
+      'string.min': 'City name must contain at least 1 character.',
+      'string.max': 'City name must be 100 characters or less.',
+      'string.pattern.base':
+        'City name can only contain letters, spaces, and hyphens.',
+      'any.required': 'City is required.',
+    })
+
   const handleWeather = async (city: string) => {
-    if (!city) {
-      setInputError('City is required')
+    const correctedCity = city.toLowerCase().trim()
+
+    const { error } = searchShema.validate(correctedCity)
+
+    if (error) {
+      setInputError(error.details[0].message)
+      setInputValue('')
       return
     }
-    const correctedCity = city.toLowerCase().trim()
+
     await dispatch(getCurrentWeather(correctedCity))
     await dispatch(getHourlyWeather(correctedCity))
     dispatch(setCurrentCity(correctedCity))
